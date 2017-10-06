@@ -13,6 +13,8 @@ ini_set('display_errors', 'On');
 include_once('autoload.php');
 include_once('FormExample.php');
 
+use forms\FormExample;
+
 $example = new FormExample('POST');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -44,10 +46,10 @@ body,div {
 	text-align:center;
 }
 </style>
+<?= $example->css() ?>
 </head>
 <body>
 <?= "<div style=\"width:100%;\">$form</div>" ?>
-<?= $example->css() ?>
 <?= $example->js() ?>
 </body>
 </html>
